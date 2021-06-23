@@ -93,26 +93,19 @@ public class HousieTicket {
 	public void generateTicket() {
 		int totalValues = mRows * MAX_ROW_CELL_TO_FILL;
 		int iterations = 0;
- 		int test = 0;
+ 		
 		while(true) {
 			try {
 				int value = getRand();
-				if(addValue(value)) {
-					// System.out.println("Iteration " + iterations  + ", value " + value);
+				if(addValue(value)) 
 					iterations++;
-				}
 				
 				if(iterations == totalValues)
 					break;
 				
 			} catch (Exception e) {
-				// System.out.println(e.getMessage());
-//				if(test == 5)
-//					System.exit(10);
-//				test++;
+				System.out.println(e.getMessage());
 			}
-			System.out.println("____________________________________________");
-			printTicket();
 		}
 	}
 	
@@ -125,6 +118,7 @@ public class HousieTicket {
 	 *  3. Each row has max 5 cells filled in, hence only 15 cells in all. 
 	 *   
 	 *  based on random value row and col will be decided
+	 *  
 	 * @param value
 	 */
 	public boolean addValue(int value) {
